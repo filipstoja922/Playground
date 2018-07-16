@@ -1,0 +1,31 @@
+
+
+<div class="row">
+  <div class="col-md-5">
+    <form  [formGroup]="rezervacijeForm">
+      <div (ngSubmit)="onSubmit()" class="form-group">
+        <label for="name">Ime:</label>
+        <input type="text" class="form-control" formControlName="name" id="name">
+      </div>
+      <div id="konzola">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Izaberi konzolu</label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" formControlName="konzola" class="form-control" >
+        <option *ngFor="let konzola of konzole">
+          {{ konzola.naziv }}
+        </option>
+        </select>
+      </div>
+    <hr>
+    <label for="dat">Rezervisi od:</label>
+    <input [ngModel]="startDate | date:'yyyy-MM-dd'" (ngModelChange)="startDate = $event" type="date" name="startDate" formControlName="odDatum"/>
+    <hr>
+    <label for="dat2">Rezervisi do:</label>
+    <input [ngModel]="endDate | date:'yyyy-MM-dd'" (ngModelChange)="endDate = $event" type="date" name="endDate" formControlName="doDatum"/>
+    <hr>
+      <input type="submit"(click)="onSubmit()" class="btn btn-info" value="Potvrdi">
+    </form>
+</div>
+<div class="col-md-7">
+  <app-rezervacije-list ></app-rezervacije-list>
+</div>
+</div>

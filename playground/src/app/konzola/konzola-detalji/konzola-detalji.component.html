@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      [src]="konzola.imagePath"
+      alt="{{ konzola.naziv }}"
+      class="img-responsive"
+      style="max-height: 300px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ konzola.naziv }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Podesavanja <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a style="cursor: pointer;" (click)="onEditKonzola()">Izmeni konzolu</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteKonzola()">Obrisi konzolu</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{ konzola.opis }}
+  </div>
+</div>
+<hr>
+<label for="dat">Oprema:</label>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let oprema of konzola.oprema">
+        {{ oprema.naziv }} - {{ oprema.broj }}
+      </li>
+    </ul>
+  </div>
+</div>

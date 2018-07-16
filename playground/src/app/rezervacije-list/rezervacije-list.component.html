@@ -1,0 +1,22 @@
+<div class="row" *ngIf="authService.isAuthenticated()">
+    <div class="col-xs-10">
+      <hr>
+      <ul class="list-group">
+        <a
+          class="list-group-item"
+          style="cursor: pointer"
+          *ngFor="let rezervacija of rezervacije;let i = index"
+          (click)="onEditItem(i)"
+        >
+          {{ rezervacija.name }} ({{ rezervacija.konzola }}) <br>
+          Od: {{ rezervacija.odDatum }} Do: {{ rezervacija.doDatum }}
+          
+        </a>
+      </ul>
+      <button
+      class="btn btn-danger"
+      type="button"
+      (click)="onDelete()"
+      >Delete</button>
+    </div>
+  </div>

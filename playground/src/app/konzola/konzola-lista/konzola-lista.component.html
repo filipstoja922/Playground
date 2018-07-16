@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewKonzola()">Nova konzola</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-konzola-item
+      *ngFor="let konzolaEl of konzole; let i = index"
+      [konzola]="konzolaEl"
+      [index]="i"></app-konzola-item>
+  </div>
+</div>
+

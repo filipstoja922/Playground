@@ -1,0 +1,6 @@
+Baza je radjena  Firebase-u. Kada pokrenete projekat ulogujte se sa :
+
+Email : fika@gmail.com
+Password : 1234567
+
+Nakon toga u desno uglu (na dugme Menage)  mozete da skinete podatke sa servera ili da ih pamtite na serveru
